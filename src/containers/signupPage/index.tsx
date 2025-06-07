@@ -154,7 +154,7 @@ const Signup = () => {
             value={confirmPassword}
             onChange={(e) => handleOnChange("confirmPassword", e.target.value)}
           />
-          <CustomButton type="submit" label="SIGNUP" onClick={handleOnClick} />
+          <CustomButton type="submit" label="SIGNUP" onClick={handleOnClick} disabled={!emailId || !username || !password || !confirmPassword}/>
 
           <div className="signup-footer">
             <div>Already have an account?</div>
