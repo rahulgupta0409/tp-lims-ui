@@ -1,0 +1,33 @@
+.input-row {
+    text-align: left;
+    padding: 1.172vmax 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    font-size: 16px;
+    font-weight: 100;
+    margin-bottom: 5px;
+    font-family: "Product Sans", Arial, sans-serif;
+}
+
+.input {
+    width: 100%;
+    height: 50px;
+    padding: 10px 14px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    box-sizing: border-box;
+    box-shadow: 0 0 5px 2px #cfd9df;
+    font-family: "Product Sans", Arial, sans-serif;
+    outline: none;
+
+    &:focus {
+        border-color: #cdc1ff;
+        background-color: #ffffff;
+        box-shadow: 0 0 5px 2px #cdc1ff;
+    }
+}

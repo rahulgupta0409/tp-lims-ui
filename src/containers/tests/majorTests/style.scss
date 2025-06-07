@@ -1,0 +1,103 @@
+.majortest-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+
+    .majortest-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px;
+        border-radius: 12px;
+        background-color: #e8eff5;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 90%;
+        max-width: 500px;
+
+        .h2 {
+            margin-bottom: 24px;
+            text-align: center;
+            font-family: "Product Sans", Arial, sans-serif;
+            color: #343a40;
+            font-size: 26px;
+            font-weight: 700;
+            background: #e9ecef;
+            border-radius: 8px;
+        }
+
+        .row {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 16px;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+
+
+
+            &:focus {
+                border-color: #cdc1ff;
+                background-color: #ffffff;
+                box-shadow: 0 0 5px 2px #cdc1ff;
+            }
+
+            .currency-input {
+                width: 100%;
+                height: 50px;
+                padding: 10px 14px;
+                border-radius: 6px;
+                font-size: 14px;
+                font-family: "Product Sans", Arial, sans-serif;
+                border: 1px solid #ddd;
+                box-sizing: border-box;
+                box-shadow: 0 0 5px 2px #cfd9df;
+                outline: none;
+
+                &:focus {
+                    border-color: #cdc1ff;
+                    background-color: #ffffff;
+                    box-shadow: 0 0 5px 2px #cdc1ff;
+                }
+            }
+        }
+
+        .label {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #495057;
+        }
+
+        .custom-input {
+            width: 100%;
+            padding: 0; // Reset padding if needed
+        }
+
+        .submin-majortest {
+            width: 100%;
+            height: 50px;
+            border: none;
+            border-radius: 8px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-top: 20px;
+            padding: 0 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+            &:hover {
+                background-color: #0056b3;
+            }
+
+            &:active {
+                transform: scale(0.98);
+            }
+        }
+    }
+}
