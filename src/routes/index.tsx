@@ -1,26 +1,34 @@
 import React from "react";
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Login from "../containers/loginPage";
 import Signup from "../containers/signupPage";
 import Majortests from "../containers/tests/majorTests";
-
+// import Organization from "../containers/organization";
+import AuthRouter from "./authRoute";
 
 const AppRoutes = () => {
   return (
     <Routes>
+      {/* Public routes */}
       <Route path="/" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
-      <Route path="/helper" element={<Majortests />} />
-      {/* <Route path="/organization" element={<Organization />} />
-      <Route path="/home" element={<GridExample />} />
-      <Route path="/minor" element={<Minortests />} />
-      <Route path="/minortests" element={<MinorTestMainPage />} />
-      <Route path="/table" element={<Tables />} />
-      <Route path="/patient" element={<Patients />} />
-      <Route path="/help" element={<PatientEntry />} />
-      <Route path="/h" element={<MainTestEntry />} />
-      <Route path="/signupinputtest" element={<SignupInput />} />
-      <Route path="/rahul" element={<Loader />} /> */}
+
+      {/* Protected routes wrapped with AuthRouter */}
+      <Route
+        path="/*"
+        element={
+          <AuthRouter>
+            <Routes>
+              <Route path="helper" element={<Majortests />} />
+              {/* <Route path="organization" element={<Organization />} /> */}
+              {/* Add more protected routes here */}
+              <Route path="*" element={<Navigate to="/helper" />} />
+            </Routes>
+          </AuthRouter>
+        }
+      />
+
+      {/* Fallback for unknown paths */}
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );

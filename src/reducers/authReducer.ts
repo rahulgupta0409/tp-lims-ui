@@ -2,7 +2,6 @@ import {
   LOGIN_FAIL,
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
-  SET_LOGIN_TOKEN,
   LOADING,
 } from "../actions/actionTypes";
 

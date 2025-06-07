@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 import { Button } from "@mui/material";
 import { loginSuccessAsync } from "../../actions";
 import HeadingTitle from "../../components/headingTitle";
@@ -13,8 +13,12 @@ const Login: React.FC = () => {
     const [password, setPassword] = useState<string>("");
 
     const dispatch = useAppDispatch();
-
     const navigate = useNavigate();
+
+    // ✅ Redirect if already authenticated
+    if (localStorage.getItem("token")) {
+        return <Navigate to="/helper" replace />;
+    }
 
     const handleOnChange = (param: "username" | "password", value: string): void => {
         if (param === "username") {
@@ -27,11 +31,12 @@ const Login: React.FC = () => {
     const handleOnClick = async (): Promise<void> => {
         const data = { username, password };
 
-        dispatch(loginSuccessAsync(data, () => {
-            setUsername("");
-            setPassword("");
-            navigate("/home");
-        })
+        dispatch(
+            loginSuccessAsync(data, () => {
+                setUsername("");
+                setPassword("");
+                navigate("/helper");
+            })
         );
     };
 
@@ -58,7 +63,12 @@ const Login: React.FC = () => {
                     onChange={(e) => handleOnChange("password", e.target.value)}
                 />
 
-                <CustomButton type="submit" label="LOGIN" onClick={handleOnClick} />
+                <CustomButton
+                    type="submit"
+                    label="LOGIN"
+                    onClick={handleOnClick}
+                    disabled={!username || !password} // ✅ Disable when empty
+                />
 
                 <div className="signup-redirect">
                     <div className="signup-text">Don't have an account?</div>
