@@ -2,7 +2,7 @@
     "compilerOptions": {
       "esModuleInterop": true,
       "allowSyntheticDefaultImports": true,
-      "jsx": "react",
+      "jsx": "react-jsx",
       "module": "ESNext",
       "target": "ESNext",
       "strict": true,

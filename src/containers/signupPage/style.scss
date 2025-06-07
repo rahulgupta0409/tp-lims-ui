@@ -1,0 +1,72 @@
+.signup-container {
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-form-container {
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 40px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 20px;
+    border-radius: 10px;
+    background: linear-gradient(120deg, #f5f7fa 0%, #c3cfe2 100%);
+    box-shadow: 0 0 5px 2px #cdc1ff;
+    width: 90%;
+    max-width: 500px;
+}
+
+.signup-header {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-logo {
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
+}
+
+.signup-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+    font-family: "Product Sans";
+
+    .signup-footer-button {
+    background: none;
+    color: blue;
+    justify-content: center;
+    align-items: center;
+    font-family: "Product Sans";
+    font-size: small;
+    border-radius: 30px;
+    font-variant: normal;
+    margin-left: 3px;
+}
+}
+
+.otp-input {
+    margin-bottom: 40px;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 5px 2px #cfd9df;
+    padding: 12px 16px;
+    border-radius: 6px;
+}
+
+.otp-submit-button {
+    width: 100%;
+    border: none;
+    background-color: #007bff;
+    border-radius: 10px;
+    padding: 12px 16px;
+    color: white;
+    cursor: pointer;
+}
